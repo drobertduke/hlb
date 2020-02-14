@@ -43,7 +43,7 @@ var moduleVendorCommand = &cli.Command{
 	},
 	Action: func(c *cli.Context) error {
 		ctx := appcontext.Context()
-		cln, err := solver.BuildkitClient(ctx, c.String("addr"))
+		cln, err := solver.MetatronClient(ctx)
 		if err != nil {
 			return err
 		}
@@ -62,7 +62,7 @@ var moduleTidyCommand = &cli.Command{
 	ArgsUsage: "<*.hlb>",
 	Action: func(c *cli.Context) error {
 		ctx := appcontext.Context()
-		cln, err := solver.BuildkitClient(ctx, c.String("addr"))
+		cln, err := solver.MetatronClient(ctx)
 		if err != nil {
 			return err
 		}
@@ -86,7 +86,7 @@ var moduleTreeCommand = &cli.Command{
 	},
 	Action: func(c *cli.Context) error {
 		ctx := appcontext.Context()
-		cln, err := solver.BuildkitClient(ctx, c.String("addr"))
+		cln, err := solver.MetatronClient(ctx)
 		if err != nil {
 			return err
 		}
